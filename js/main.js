@@ -76,6 +76,7 @@ function decide(item){
 	if(!item.correct){
 	    global.judgeArr.push(item);
 	    if(global.judgeArr.length== 2){
+		if(global.judgeArr[0].id===global.judgeArr[1].id) return;
 		if(global.judgeArr[0].matchId !== global.judgeArr[1].matchId){
 		    judge(global.judgeArr,false);	    
 		}else{
