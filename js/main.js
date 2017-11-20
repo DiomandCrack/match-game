@@ -29,7 +29,7 @@ global = {
 function createLiNode(dataItem){
     const item = document.createElement('li');
     item.matchId = dataItem.matchId;
-    item.ElementId = dataItem.id;
+    item.elementId = dataItem.id;
     item.correct = false;
     const str = `
 	    <div class="card flipper-container">
@@ -76,14 +76,17 @@ function decide(item){
 	if(!item.correct){
 	    global.judgeArr.push(item);
 	    if(global.judgeArr.length== 2){
-		if(global.judgeArr[0].matchId !== global.judgeArr[1].matchId){
-		    judge(global.judgeArr,false);	    
+		if(global.judgeArr[0].elementId===global.judgeArr[1].elementId) {
+		    global.judgeArr.length = 1;
+		}else if(global.judgeArr[0].matchId !== global.judgeArr[1].matchId){
+		    judge(global.judgeArr,false);
+		    global.judgeArr.length=0;
 		}else{
 		    console.log('ถิมห');
 		    item.correct = true;
 		    judge(global.judgeArr,true);
+		    global.judgeArr.length=0;
 		}
-		global.judgeArr.length=0;
 	    }
 	}
     };
