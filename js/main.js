@@ -24,6 +24,7 @@ data = [
 //-------------------------全局变量----------------------------------
 global = {
     listCon: document.querySelector('.list-con'),
+    prompt: document.querySelector('.prompt'),
     judgeArr: [],
     time: {
 	h:0,
@@ -32,8 +33,10 @@ global = {
 	t:0,
 	timer:''
     },
+    correct: false,
     wrongStep: 0,
-    totleStep:0
+    totleStep:0,
+    starsNum: 0
 };
 
 //-----------------------------生成节点--------------------------------------
@@ -59,6 +62,7 @@ function createLiNode(dataItem){
 }
 //---------------------------生成结构------------------------------------------------------
 function createCards(data){
+    global.listCon.innerHTML = '';
     const arr = data.slice().sort(function(){
 	return Math.random() - 0.5;
     });
@@ -67,7 +71,7 @@ function createCards(data){
     });
 }
 
-createCards(data);
+// createCards(data);
 
 //--------------------------点击翻转函数--------------------------------------------------------------
 function rotate(){
@@ -79,7 +83,7 @@ function rotate(){
     });
 };
 
-rotate();
+// rotate();
 //---------------------------判断是否匹配正确----------------------------------------------------
 
 function decide(item){
@@ -140,12 +144,12 @@ function timing(){
 
     global.time.t++;
 
-    timer = setTimeout(timing,1000);
+    global.time.timer = setTimeout(timing,1000);
 }
 function add0(num){
     return num < 10 ?  '0'+num : ''+num;
 }
-timing();
+// timing();
 
 //--------------------------星星-------------------------------
 function stars(){
@@ -154,11 +158,15 @@ function stars(){
     let arr = starsArr.slice();
     if(global.wrongStep <= 5){
 	arr.length =0;
+	global.starsNum = 3;
     }else if(global.wrongStep > 5 && global.wrongStep<= 10){
 	arr = arr.slice(2,3);
-	console.log(arr);
+	global.starsNum = 2;
     } else if(global.wrongStep <= 15&&global.wrongStep>10){
 	arr.shift();
+	global.starsNum = 1;
+    }else{
+	global.starsNum =0;
     }
     arr.forEach(item=>item.className='fa fa-star-o');
 }
@@ -167,9 +175,56 @@ function prompt(){
     // global.prompt.classList.toggle('show',correct);
     const listCon = document.querySelector('.list-con');
     const items = listCon.querySelectorAll('li');
-    const correct = [...items].every(function(item){
+    const getStar = global.prompt.querySelector('.get-star em');
+    const total = global.prompt.querySelector('.total-step em');
+    global.correct = [...items].every(function(item){
 	return item.correct;
     });
-    console.log(correct);
-    if(correct) console.log(1);
+    console.log(global.correct);
+    total.innerHTML = global.totleStep;
+    getStar.innerHTML = global.starsNum;
+    global.prompt.classList.toggle('show',global.correct);
+    if(global.correct){
+	clearTimeout(global.time.timer);
+	again(global.correct,data);
+    }
+
 }
+//----------------------------初始化--------------------------------
+function gameInit(data){
+    createCards(data);
+    rotate();
+    timing();
+    global.wrongStep = 0;
+    global.totleStep = 0;
+    global.starsNum = 0;
+    global.time ={
+	h:0,
+	m:0,
+	s:0,
+	t:0,
+	timer:''
+    };
+    global.correct = false;
+    global.prompt.classList.remove('show');
+    const  star = document.querySelector('.star');
+    const starsAll = star.querySelectorAll('.fa');
+    [...starsAll].forEach(function(item){
+	console.log(item);
+	    item.className = 'fa fa-star';
+    });
+}
+
+//-------------------------------再来一次---------------------------------
+function again(correct,data){
+    const btnAgain = document.querySelector('.once-more');
+
+    btnAgain.onclick = function(){
+	gameInit(data);
+	
+    };
+
+}
+
+
+gameInit(data);
