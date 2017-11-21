@@ -1,4 +1,4 @@
-//------------------ ˝æ›------------------------
+Ôªø//------------------Êï∞ÊçÆ------------------------
 data = [
     {id:0,name:'github',matchId:1},
     {id:1,name:'github',matchId:1},
@@ -21,7 +21,7 @@ data = [
     {id:18,name:'youtube-play',matchId:10},
     {id:19,name:'youtube-play',matchId:10}
 ];
-//-------------------------»´æ÷±‰¡ø----------------------------------
+//-------------------------ÂÖ®Â±ÄÂèòÈáè----------------------------------
 global = {
     listCon: document.querySelector('.list-con'),
     prompt: document.querySelector('.prompt'),
@@ -39,7 +39,7 @@ global = {
     starsNum: 0
 };
 
-//-----------------------------…˙≥…Ω⁄µ„--------------------------------------
+//-----------------------------ÁîüÊàêËäÇÁÇπ--------------------------------------
 function createLiNode(dataItem){
     const item = document.createElement('li');
     item.matchId = dataItem.matchId;
@@ -60,7 +60,7 @@ function createLiNode(dataItem){
 
     return item;
 }
-//---------------------------…˙≥…Ω·ππ------------------------------------------------------
+//---------------------------ÁîüÊàêÁªìÊûÑ------------------------------------------------------
 function createCards(data){
     global.listCon.innerHTML = '';
     const arr = data.slice().sort(function(){
@@ -73,7 +73,7 @@ function createCards(data){
 
 // createCards(data);
 
-//--------------------------µ„ª˜∑≠◊™∫Ø ˝--------------------------------------------------------------
+//--------------------------ÁÇπÂáªÁøªËΩ¨ÂáΩÊï∞--------------------------------------------------------------
 function rotate(){
     const listCon = document.querySelector('.list-con');
     const items = listCon.querySelectorAll('li');
@@ -84,7 +84,7 @@ function rotate(){
 };
 
 // rotate();
-//---------------------------≈–∂œ «∑Ò∆•≈‰’˝»∑----------------------------------------------------
+//---------------------------Âà§Êñ≠ÊòØÂê¶ÂåπÈÖçÊ≠£Á°Æ----------------------------------------------------
 
 function decide(item){
     const flipper = item.querySelector('.flipper');
@@ -112,7 +112,7 @@ function decide(item){
     };
 }
 
-//------------------------Ã· æ «∑Ò∆•≈‰’˝»∑-------------------------------
+//------------------------ÊèêÁ§∫ÊòØÂê¶ÂåπÈÖçÊ≠£Á°Æ-------------------------------
 function judge(arr,onOff){
     global.judgeArr.forEach(function(item){
 	const flipper = item.querySelector('.flipper');
@@ -128,7 +128,7 @@ function judge(arr,onOff){
 	}
     });
 }
-//--------------------------º∆ ±∆˜------------------------------------------
+//--------------------------ËÆ°Êó∂Âô®------------------------------------------
 function timing(){
     global.time.h = parseInt(global.time.t/60/60);
     global.time.m = parseInt(global.time.t/60%60);
@@ -151,7 +151,7 @@ function add0(num){
 }
 // timing();
 
-//--------------------------–«–«-------------------------------
+//--------------------------ÊòüÊòü-------------------------------
 function stars(){
     const  star = document.querySelectorAll('.fa-star');
     const starsArr = [...star];
@@ -170,7 +170,7 @@ function stars(){
     }
     arr.forEach(item=>item.className='fa fa-star-o');
 }
-//----------------------------Ã· æøÚ---------------------------------
+//----------------------------ÊèêÁ§∫Ê°Ü---------------------------------
 function prompt(){
     // global.prompt.classList.toggle('show',correct);
     const listCon = document.querySelector('.list-con');
@@ -190,7 +190,7 @@ function prompt(){
     }
 
 }
-//----------------------------≥ı ºªØ--------------------------------
+//----------------------------ÂàùÂßãÂåñ--------------------------------
 function gameInit(data){
     createCards(data);
     rotate();
@@ -215,15 +215,13 @@ function gameInit(data){
     });
 }
 
-//-------------------------------‘Ÿ¿¥“ª¥Œ---------------------------------
+//-------------------------------ÂÜçÊù•‰∏ÄÊ¨°---------------------------------
 function again(correct,data){
     const btnAgain = document.querySelector('.once-more');
 
     btnAgain.onclick = function(){
 	gameInit(data);
-	
     };
-
 }
 
 
