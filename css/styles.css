@@ -659,31 +659,38 @@ h1 {
     padding: 13px 250px;
     margin: 0.5rem 0;
   }
+
+  /* line 52, ../sass/partials/_media.scss */
+  .start-game {
+    transform: scale(1.2);
+    transform-origin: left top;
+    margin-top: 0.5rem;
+  }
 }
 @media (max-width: 800px) {
-  /* line 55, ../sass/partials/_media.scss */
+  /* line 60, ../sass/partials/_media.scss */
   .back {
     font-size: 3em;
   }
 
-  /* line 58, ../sass/partials/_media.scss */
+  /* line 63, ../sass/partials/_media.scss */
   .list-con li {
     width: 25%;
     padding: 10px;
   }
 
-  /* line 62, ../sass/partials/_media.scss */
+  /* line 67, ../sass/partials/_media.scss */
   main {
     height: 70%;
   }
 
-  /* line 65, ../sass/partials/_media.scss */
+  /* line 70, ../sass/partials/_media.scss */
   .info {
     padding: 13px 100px;
     margin: 0.5rem 0;
   }
 
-  /* line 69, ../sass/partials/_media.scss */
+  /* line 74, ../sass/partials/_media.scss */
   .wrap {
     width: 80%;
   }

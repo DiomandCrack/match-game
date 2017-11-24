@@ -49,6 +49,11 @@
         padding: 13px 250px;
         margin: 0.5rem 0;
     }
+    .start-game {
+        transform: scale(1.2);
+        transform-origin: left top;
+        margin-top: 0.5rem;
+    }
 }
 
 @media (max-width:800px) {
