@@ -249,6 +249,9 @@ function startBtn() {
         clearTimeout(global.time.timer);
         shadow.style.opacity = 0;
         shadow.style.top = '-100 %';
+        setTimeout(function() {
+            shadow.style.display = 'none';
+        }, 500);
         global.first = false;
         gameInit(data);
         timing();
