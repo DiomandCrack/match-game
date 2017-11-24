@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 45, ../sass/partials/_normalize.scss */
 article,
 aside,
@@ -322,13 +323,13 @@ body {
 
 /* line 23, ../sass/partials/_modules.scss */
 main {
-  height: 85%;
+  height: 80%;
 }
 
 /* line 27, ../sass/partials/_modules.scss */
 .wrap {
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
 }
 
 /* line 32, ../sass/partials/_modules.scss */
@@ -366,21 +367,20 @@ h1 {
 }
 /* line 60, ../sass/partials/_modules.scss */
 .container .list-con li {
-  width: 20%;
   display: flex;
   align-items: center;
 }
-/* line 65, ../sass/partials/_modules.scss */
+/* line 64, ../sass/partials/_modules.scss */
 .container .list-con .card,
 .container .list-con .flipper {
   width: 100%;
   height: 100%;
 }
-/* line 70, ../sass/partials/_modules.scss */
+/* line 69, ../sass/partials/_modules.scss */
 .container .list-con .card {
   perspective: 1000;
 }
-/* line 73, ../sass/partials/_modules.scss */
+/* line 72, ../sass/partials/_modules.scss */
 .container .list-con .flipper {
   transition: 1s;
   transform-style: preserve-3d;
@@ -389,28 +389,29 @@ h1 {
   border-radius: 10px;
   color: rgba(0, 0, 0, 0.5);
 }
-/* line 80, ../sass/partials/_modules.scss */
+/* line 79, ../sass/partials/_modules.scss */
 .container .list-con .flipper.correct {
   animation: correct 1s;
   transform: rotateY(180deg);
 }
-/* line 84, ../sass/partials/_modules.scss */
+/* line 83, ../sass/partials/_modules.scss */
 .container .list-con .flipper.wrong {
   animation: wrong 2s;
   transform: rotateY(0deg);
 }
-/* line 88, ../sass/partials/_modules.scss */
+/* line 87, ../sass/partials/_modules.scss */
 .container .list-con .flipper.active {
   transform: rotateY(180deg);
 }
-/* line 92, ../sass/partials/_modules.scss */
+/* line 91, ../sass/partials/_modules.scss */
 .container .list-con .front {
+  background: #00a8eb;
   background-color: #00a8eb;
   background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.7) 50%);
   background-size: 41% 41%;
   z-index: 2;
 }
-/* line 100, ../sass/partials/_modules.scss */
+/* line 99, ../sass/partials/_modules.scss */
 .container .list-con .back {
   display: flex;
   transform: rotateY(180deg);
@@ -418,7 +419,7 @@ h1 {
   align-items: center;
   color: inherit;
 }
-/* line 107, ../sass/partials/_modules.scss */
+/* line 106, ../sass/partials/_modules.scss */
 .container .list-con .front,
 .container .list-con .back {
   border-radius: 10px;
@@ -428,6 +429,12 @@ h1 {
   top: 0px;
   left: 0px;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* Chrome 和 Safari */
+  -moz-backface-visibility: hidden;
+  /* Firefox */
+  -ms-backface-visibility: hidden;
+  /* Internet Explorer */
 }
 
 @keyframes correct {
@@ -492,12 +499,12 @@ h1 {
     color: rgba(0, 0, 0, 0.6);
   }
 }
-/* line 187, ../sass/partials/_modules.scss */
+/* line 192, ../sass/partials/_modules.scss */
 .main {
   position: relative;
 }
 
-/* line 194, ../sass/partials/_modules.scss */
+/* line 196, ../sass/partials/_modules.scss */
 .prompt {
   width: 100%;
   height: 100%;
@@ -510,11 +517,11 @@ h1 {
   align-items: center;
   display: none;
 }
-/* line 205, ../sass/partials/_modules.scss */
+/* line 207, ../sass/partials/_modules.scss */
 .prompt.show {
   display: flex;
 }
-/* line 209, ../sass/partials/_modules.scss */
+/* line 211, ../sass/partials/_modules.scss */
 .prompt .prompt-box {
   width: 600px;
   height: 500px;
@@ -525,18 +532,18 @@ h1 {
   border-radius: 20px;
   box-shadow: 5px 5px 20px 0px rgba(56, 60, 62, 0.4);
 }
-/* line 219, ../sass/partials/_modules.scss */
+/* line 221, ../sass/partials/_modules.scss */
 .prompt .prompt-text {
   text-align: center;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
-/* line 225, ../sass/partials/_modules.scss */
+/* line 227, ../sass/partials/_modules.scss */
 .prompt .fa {
   padding-bottom: 1rem;
 }
-/* line 228, ../sass/partials/_modules.scss */
+/* line 230, ../sass/partials/_modules.scss */
 .prompt .once-more {
   margin: 1em auto 0;
   width: 10rem;
@@ -549,14 +556,34 @@ h1 {
   line-height: 2;
 }
 
+/* line 243, ../sass/partials/_modules.scss */
+.start-game {
+  margin: 0 auto;
+  width: 12em;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  height: 2.5em;
+  line-height: 2.5;
+  border-radius: 10px;
+  margin-top: 1rem;
+  background: #19c872;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+/* line 255, ../sass/partials/_modules.scss */
+.start-game.active {
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2) inset;
+}
+
 @media (min-width: 1336px) {
-  /* line 3, ../sass/partials/_media.scss */
+  /* line 2, ../sass/partials/_media.scss */
   .back {
     font-size: 5em;
   }
 
-  /* line 6, ../sass/partials/_media.scss */
+  /* line 5, ../sass/partials/_media.scss */
   .list-con li {
+    width: 20%;
     padding: 20px;
   }
 
@@ -565,69 +592,87 @@ h1 {
     padding: 13px 300px;
   }
 }
-@media (max-width: 1335px) {
+@media (max-width: 1335px) and (min-width: 1025px) {
   /* line 15, ../sass/partials/_media.scss */
   .back {
-    font-size: 3em;
+    font-size: 5em;
   }
 
   /* line 18, ../sass/partials/_media.scss */
   .list-con li {
+    width: 20%;
     padding: 15px;
   }
 
-  /* line 21, ../sass/partials/_media.scss */
+  /* line 22, ../sass/partials/_media.scss */
   .wrap {
     width: 70%;
   }
 
-  /* line 24, ../sass/partials/_media.scss */
+  /* line 25, ../sass/partials/_media.scss */
   main {
     height: 75%;
   }
 
-  /* line 27, ../sass/partials/_media.scss */
+  /* line 28, ../sass/partials/_media.scss */
   .info {
     padding: 13px 250px;
     margin: 1rem 0;
   }
 }
-@media (max-width: 1024px) {
-  /* line 34, ../sass/partials/_media.scss */
+@media (max-width: 1024px) and (min-width: 801px) {
+  /* line 35, ../sass/partials/_media.scss */
+  .back {
+    font-size: 4em;
+  }
+
+  /* line 38, ../sass/partials/_media.scss */
   .list-con li {
+    width: 25%;
     padding: 15px;
   }
 
-  /* line 37, ../sass/partials/_media.scss */
+  /* line 42, ../sass/partials/_media.scss */
   .wrap {
-    width: 100%;
+    width: 90%;
   }
 
-  /* line 40, ../sass/partials/_media.scss */
+  /* line 45, ../sass/partials/_media.scss */
   main {
-    height: 70%;
+    height: 80%;
   }
 
-  /* line 43, ../sass/partials/_media.scss */
+  /* line 48, ../sass/partials/_media.scss */
   .info {
     padding: 13px 250px;
     margin: 0.5rem 0;
   }
 }
 @media (max-width: 800px) {
-  /* line 50, ../sass/partials/_media.scss */
-  main {
-    height: 85%;
+  /* line 55, ../sass/partials/_media.scss */
+  .back {
+    font-size: 3em;
   }
 
-  /* line 53, ../sass/partials/_media.scss */
+  /* line 58, ../sass/partials/_media.scss */
+  .list-con li {
+    width: 25%;
+    padding: 10px;
+  }
+
+  /* line 62, ../sass/partials/_media.scss */
+  main {
+    height: 70%;
+  }
+
+  /* line 65, ../sass/partials/_media.scss */
   .info {
-    padding: 13px 150px;
+    padding: 13px 100px;
     margin: 0.5rem 0;
   }
 
-  /* line 57, ../sass/partials/_media.scss */
+  /* line 69, ../sass/partials/_media.scss */
   .wrap {
-    width: 100%;
+    width: 80%;
   }
 }

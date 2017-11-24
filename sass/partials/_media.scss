@@ -1,9 +1,9 @@
-
 @media (min-width: 1336px) {
     .back {
         font-size: 5em;
     }
     .list-con li {
+        width: 20%;
         padding: 20px;
     }
     .info {
@@ -11,11 +11,12 @@
     }
 }
 
-@media (max-width: 1335px) {
+@media (max-width: 1335px) and (min-width: 1025px) {
     .back {
-        font-size: 3em;
+        font-size: 5em;
     }
     .list-con li {
+        width: 20%;
         padding: 15px;
     }
     .wrap {
@@ -30,15 +31,19 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 801px) {
+    .back {
+        font-size: 4em;
+    }
     .list-con li {
+        width: 25%;
         padding: 15px;
     }
     .wrap {
-        width: 100%;
+        width: 90%;
     }
     main {
-        height: 70%;
+        height: 80%;
     }
     .info {
         padding: 13px 250px;
@@ -47,14 +52,21 @@
 }
 
 @media (max-width:800px) {
+    .back {
+        font-size: 3em;
+    }
+    .list-con li {
+        width: 25%;
+        padding: 10px;
+    }
     main {
-        height: 85%;
+        height: 70%;
     }
     .info {
-        padding: 13px 150px;
+        padding: 13px 100px;
         margin: 0.5rem 0;
     }
     .wrap {
-        width: 100%;
+        width: 80%;
     }
 }

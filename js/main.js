@@ -37,7 +37,8 @@ global = {
     wrongStep: 0,
     totleStep: 0,
     starsNum: 0,
-    pixel: 1 / window.devicePixelRatio
+    pixel: 1 / window.devicePixelRatio,
+    first: true
 };
 
 //-----------------------------生成节点--------------------------------------
@@ -201,7 +202,6 @@ function prompt() {
 function gameInit(data) {
     createCards(data);
     rotate();
-    timing();
     global.wrongStep = 0;
     global.totleStep = 0;
     global.starsNum = 0;
@@ -220,6 +220,7 @@ function gameInit(data) {
         console.log(item);
         item.className = 'fa fa-star';
     });
+    global.judgeArr = [];
 }
 
 //-------------------------------再来一次---------------------------------
@@ -228,6 +229,7 @@ function again(correct, data) {
 
     btnAgain.onclick = function() {
         gameInit(data);
+        timing();
     };
 }
 //-------------------------------移动端适配---------------------------
@@ -238,6 +240,25 @@ function adopt() {
     scale.name = 'viewport';
     scale.content = `width=device-width,initial-scale=${global.pixel},minimum-scale=${global.pixel},maximum-scale=${global.pixel},user-scalable=no`;
 }
+//--------------------------------开始按钮-------------------------------------
+
+function startBtn() {
+    const startBtn = document.querySelector('.start-game');
+    startBtn.onclick = function() {
+        clearTimeout(global.time.timer);
+        global.first = false;
+        gameInit(data);
+        timing();
+        startBtn.innerHTML = global.first ? '开始游戏' : '重新开始';
+    };
+    startBtn.onmousedown = function() {
+        this.classList.add('active');
+    };
+    startBtn.onmouseup = function() {
+        this.classList.remove('active');
+    };
+}
 
 adopt();
 gameInit(data);
+startBtn();

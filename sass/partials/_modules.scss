@@ -21,12 +21,12 @@ body {
 
 $box-shadow-color: #f1f5fa;
 main {
-    height: 85%;
+    height: 80%;
 }
 
 .wrap {
     margin: 0 auto;
-    width: 60%;
+    width: 50%;
 }
 
 h1 {
@@ -58,7 +58,6 @@ h1 {
         width: 100%;
         height: 100%;
         li {
-            width: 20%;
             display: flex;
             align-items: center;
         }
@@ -91,7 +90,7 @@ h1 {
         }
         .front {
             //from css3 pattern gallery
-            // background: #00a8eb;
+            background: #00a8eb;
             background-color: #00a8eb;
             background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, .7) 50%);
             background-size: 41% 41%;
@@ -113,6 +112,12 @@ h1 {
             top: 0px;
             left: 0px;
             backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            /* Chrome 和 Safari */
+            -moz-backface-visibility: hidden;
+            /* Firefox */
+            -ms-backface-visibility: hidden;
+            /* Internet Explorer */
         }
         // .card:hover .flipper, .card:hover .flipper {
         //     transform: rotateY(180deg);
@@ -188,9 +193,6 @@ h1 {
     position: relative;
 }
 
-$prompt-background: #fff;
-$font-color: #000;
-$btn-background-right: #19c872;
 .prompt {
     width: 100%;
     height: 100%;
@@ -235,5 +237,22 @@ $btn-background-right: #19c872;
         color: rgba($prompt-background, 0.9);
         font-size: 1.5rem;
         line-height: 2;
+    }
+}
+
+.start-game {
+    margin: 0 auto;
+    width: 12em;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    height: 2.5em;
+    line-height: 2.5;
+    border-radius: 10px;
+    margin-top: 1rem;
+    background: $btn-background-right;
+    color: rgba($prompt-background, 0.8);
+    cursor: default;
+    &.active {
+        box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2) inset;
     }
 }
