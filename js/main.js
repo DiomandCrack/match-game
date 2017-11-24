@@ -245,7 +245,10 @@ function adopt() {
 function startBtn() {
     const startBtn = document.querySelector('.start-game');
     startBtn.onclick = function() {
+        const shadow = document.querySelector('.shadow');
         clearTimeout(global.time.timer);
+        shadow.style.opacity = 0;
+        shadow.style.top = '-100 %';
         global.first = false;
         gameInit(data);
         timing();

@@ -356,8 +356,10 @@ h1 {
   border: 3px solid #f1f5fa;
   box-shadow: 0 0 0 10px rgba(241, 245, 250, 0.1);
   padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
-/* line 54, ../sass/partials/_modules.scss */
+/* line 56, ../sass/partials/_modules.scss */
 .container .list-con {
   display: flex;
   flex-direction: row;
@@ -365,22 +367,22 @@ h1 {
   width: 100%;
   height: 100%;
 }
-/* line 60, ../sass/partials/_modules.scss */
+/* line 62, ../sass/partials/_modules.scss */
 .container .list-con li {
   display: flex;
   align-items: center;
 }
-/* line 64, ../sass/partials/_modules.scss */
+/* line 66, ../sass/partials/_modules.scss */
 .container .list-con .card,
 .container .list-con .flipper {
   width: 100%;
   height: 100%;
 }
-/* line 69, ../sass/partials/_modules.scss */
+/* line 71, ../sass/partials/_modules.scss */
 .container .list-con .card {
   perspective: 1000;
 }
-/* line 72, ../sass/partials/_modules.scss */
+/* line 74, ../sass/partials/_modules.scss */
 .container .list-con .flipper {
   transition: 1s;
   transform-style: preserve-3d;
@@ -389,21 +391,21 @@ h1 {
   border-radius: 10px;
   color: rgba(0, 0, 0, 0.5);
 }
-/* line 79, ../sass/partials/_modules.scss */
+/* line 81, ../sass/partials/_modules.scss */
 .container .list-con .flipper.correct {
   animation: correct 1s;
   transform: rotateY(180deg);
 }
-/* line 83, ../sass/partials/_modules.scss */
+/* line 85, ../sass/partials/_modules.scss */
 .container .list-con .flipper.wrong {
   animation: wrong 2s;
   transform: rotateY(0deg);
 }
-/* line 87, ../sass/partials/_modules.scss */
+/* line 89, ../sass/partials/_modules.scss */
 .container .list-con .flipper.active {
   transform: rotateY(180deg);
 }
-/* line 91, ../sass/partials/_modules.scss */
+/* line 93, ../sass/partials/_modules.scss */
 .container .list-con .front {
   background: #00a8eb;
   background-color: #00a8eb;
@@ -411,7 +413,7 @@ h1 {
   background-size: 41% 41%;
   z-index: 2;
 }
-/* line 99, ../sass/partials/_modules.scss */
+/* line 101, ../sass/partials/_modules.scss */
 .container .list-con .back {
   display: flex;
   transform: rotateY(180deg);
@@ -419,7 +421,7 @@ h1 {
   align-items: center;
   color: inherit;
 }
-/* line 106, ../sass/partials/_modules.scss */
+/* line 108, ../sass/partials/_modules.scss */
 .container .list-con .front,
 .container .list-con .back {
   border-radius: 10px;
@@ -435,6 +437,16 @@ h1 {
   /* Firefox */
   -ms-backface-visibility: hidden;
   /* Internet Explorer */
+}
+/* line 128, ../sass/partials/_modules.scss */
+.container .shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(#37335a 30%, #33b4f3);
+  transition: 0.5s;
 }
 
 @keyframes correct {
@@ -499,12 +511,12 @@ h1 {
     color: rgba(0, 0, 0, 0.6);
   }
 }
-/* line 192, ../sass/partials/_modules.scss */
+/* line 203, ../sass/partials/_modules.scss */
 .main {
   position: relative;
 }
 
-/* line 196, ../sass/partials/_modules.scss */
+/* line 207, ../sass/partials/_modules.scss */
 .prompt {
   width: 100%;
   height: 100%;
@@ -517,11 +529,11 @@ h1 {
   align-items: center;
   display: none;
 }
-/* line 207, ../sass/partials/_modules.scss */
+/* line 218, ../sass/partials/_modules.scss */
 .prompt.show {
   display: flex;
 }
-/* line 211, ../sass/partials/_modules.scss */
+/* line 222, ../sass/partials/_modules.scss */
 .prompt .prompt-box {
   width: 600px;
   height: 500px;
@@ -532,18 +544,18 @@ h1 {
   border-radius: 20px;
   box-shadow: 5px 5px 20px 0px rgba(56, 60, 62, 0.4);
 }
-/* line 221, ../sass/partials/_modules.scss */
+/* line 232, ../sass/partials/_modules.scss */
 .prompt .prompt-text {
   text-align: center;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
-/* line 227, ../sass/partials/_modules.scss */
+/* line 238, ../sass/partials/_modules.scss */
 .prompt .fa {
   padding-bottom: 1rem;
 }
-/* line 230, ../sass/partials/_modules.scss */
+/* line 241, ../sass/partials/_modules.scss */
 .prompt .once-more {
   margin: 1em auto 0;
   width: 10rem;
@@ -556,7 +568,7 @@ h1 {
   line-height: 2;
 }
 
-/* line 243, ../sass/partials/_modules.scss */
+/* line 254, ../sass/partials/_modules.scss */
 .start-game {
   margin: 0 auto;
   width: 12em;
@@ -570,7 +582,7 @@ h1 {
   color: rgba(255, 255, 255, 0.8);
   cursor: default;
 }
-/* line 255, ../sass/partials/_modules.scss */
+/* line 266, ../sass/partials/_modules.scss */
 .start-game.active {
   box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2) inset;
 }
