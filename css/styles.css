@@ -550,62 +550,84 @@ h1 {
 }
 
 @media (min-width: 1336px) {
-  /* line 242, ../sass/partials/_modules.scss */
+  /* line 3, ../sass/partials/_media.scss */
   .back {
     font-size: 5em;
   }
 
-  /* line 245, ../sass/partials/_modules.scss */
+  /* line 6, ../sass/partials/_media.scss */
   .list-con li {
     padding: 20px;
   }
 
-  /* line 248, ../sass/partials/_modules.scss */
+  /* line 9, ../sass/partials/_media.scss */
   .info {
     padding: 13px 300px;
   }
 }
 @media (max-width: 1335px) {
-  /* line 254, ../sass/partials/_modules.scss */
+  /* line 15, ../sass/partials/_media.scss */
   .back {
     font-size: 3em;
   }
 
-  /* line 257, ../sass/partials/_modules.scss */
+  /* line 18, ../sass/partials/_media.scss */
   .list-con li {
     padding: 15px;
   }
 
-  /* line 260, ../sass/partials/_modules.scss */
+  /* line 21, ../sass/partials/_media.scss */
   .wrap {
     width: 70%;
   }
 
-  /* line 263, ../sass/partials/_modules.scss */
+  /* line 24, ../sass/partials/_media.scss */
   main {
     height: 75%;
   }
 
-  /* line 266, ../sass/partials/_modules.scss */
+  /* line 27, ../sass/partials/_media.scss */
   .info {
     padding: 13px 250px;
     margin: 1rem 0;
   }
 }
 @media (max-width: 1024px) {
-  /* line 273, ../sass/partials/_modules.scss */
+  /* line 34, ../sass/partials/_media.scss */
   .list-con li {
     padding: 15px;
   }
 
-  /* line 276, ../sass/partials/_modules.scss */
+  /* line 37, ../sass/partials/_media.scss */
   .wrap {
-    width: 80%;
+    width: 100%;
   }
 
-  /* line 279, ../sass/partials/_modules.scss */
+  /* line 40, ../sass/partials/_media.scss */
+  main {
+    height: 70%;
+  }
+
+  /* line 43, ../sass/partials/_media.scss */
   .info {
     padding: 13px 250px;
     margin: 0.5rem 0;
+  }
+}
+@media (max-width: 800px) {
+  /* line 50, ../sass/partials/_media.scss */
+  main {
+    height: 85%;
+  }
+
+  /* line 53, ../sass/partials/_media.scss */
+  .info {
+    padding: 13px 150px;
+    margin: 0.5rem 0;
+  }
+
+  /* line 57, ../sass/partials/_media.scss */
+  .wrap {
+    width: 100%;
   }
 }
